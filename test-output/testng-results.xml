@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //p[@class='txt' and text()='Auto ']] <--- has been clicked<br>]]>
+    </line>
+    <line>
+      <![CDATA[11368 : has been passed to ---> [[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='zipCode_overlay']]<br>]]>
+    </line>
+    <line>
+      <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='qsButton_overlay']] <--- has been clicked<br>]]>
+    </line>
+  </reporter-output>
+  <suite name="RegressionSuite" duration-ms="18414" started-at="2022-10-30T01:10:36 EDT" finished-at="2022-10-30T01:10:55 EDT">
+    <groups>
+    </groups>
+    <test name="RegressionTest" duration-ms="18414" started-at="2022-10-30T01:10:36 EDT" finished-at="2022-10-30T01:10:55 EDT">
+      <class name="auto.AutoTest">
+        <test-method status="PASS" signature="setUpDriver()[pri:0, instance:auto.AutoTest@1990a65e]" name="setUpDriver" is-config="true" duration-ms="16091" started-at="2022-10-30T01:10:36 EDT" finished-at="2022-10-30T01:10:53 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method status="PASS" signature="autoQuote()[pri:0, instance:auto.AutoTest@1990a65e]" name="autoQuote" duration-ms="2140" started-at="2022-10-30T01:10:53 EDT" finished-at="2022-10-30T01:10:55 EDT">
+          <reporter-output>
+            <line>
+              <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //p[@class='txt' and text()='Auto ']] <--- has been clicked<br>]]>
+            </line>
+            <line>
+              <![CDATA[11368 : has been passed to ---> [[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='zipCode_overlay']]<br>]]>
+            </line>
+            <line>
+              <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='qsButton_overlay']] <--- has been clicked<br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- autoQuote -->
+        <test-method status="PASS" signature="closingDriverSession()[pri:0, instance:auto.AutoTest@1990a65e]" name="closingDriverSession" is-config="true" duration-ms="134" started-at="2022-10-30T01:10:55 EDT" finished-at="2022-10-30T01:10:55 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingDriverSession -->
+      </class> <!-- auto.AutoTest -->
+    </test> <!-- RegressionTest -->
+  </suite> <!-- RegressionSuite -->
+</testng-results>
