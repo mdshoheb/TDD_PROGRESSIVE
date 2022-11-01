@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<parameter name="zip" value="11368"></parameter>
+		<parameter name="firstName" value="Andrew"></parameter>
+		<parameter name="lastName" value="Hall"></parameter>
+		<parameter name="middleIn" value="R"></parameter>
+		<parameter name="dob" value="05/11/1994"></parameter>
+		<parameter name="mailingAddress" value="9610 57th ave"></parameter>
+		<parameter name="apt" value="17F"></parameter>
+		<parameter name="city" value="Corona"></parameter>
+		<classes>
+			<class name="auto.AutoTest">
+				<methods>
+					<include name="autoQuoteParameter"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

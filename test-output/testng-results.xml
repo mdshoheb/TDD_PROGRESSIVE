@@ -2,42 +2,90 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //p[@class='txt' and text()='Auto ']] <--- has been clicked<br>]]>
+      <![CDATA[[[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //p[@class='txt' and text()='Auto ']] <--- has been clicked<br>]]>
     </line>
     <line>
-      <![CDATA[11368 : has been passed to ---> [[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='zipCode_overlay']]<br>]]>
+      <![CDATA[11368 : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //input[@id='zipCode_overlay']]<br>]]>
     </line>
     <line>
-      <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='qsButton_overlay']] <--- has been clicked<br>]]>
+      <![CDATA[[[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //input[@id='qsButton_overlay']] <--- has been clicked<br>]]>
+    </line>
+    <line>
+      <![CDATA[Idris : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_FirstName]<br>]]>
+    </line>
+    <line>
+      <![CDATA[Alba : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_LastName]<br>]]>
+    </line>
+    <line>
+      <![CDATA[J : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_MiddleInitial]<br>]]>
+    </line>
+    <line>
+      <![CDATA[02/26/1970 : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_DateOfBirth]<br>]]>
+    </line>
+    <line>
+      <![CDATA[9610 57th Ave : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_MailingAddress]<br>]]>
+    </line>
+    <line>
+      <![CDATA[17F : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_ApartmentUnit]<br>]]>
+    </line>
+    <line>
+      <![CDATA[Corona : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_City]<br>]]>
+    </line>
+    <line>
+      <![CDATA[[[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //button[text()='Okay, start my quote.']] <--- has been clicked<br>]]>
     </line>
   </reporter-output>
-  <suite name="RegressionSuite" duration-ms="18414" started-at="2022-10-30T01:10:36 EDT" finished-at="2022-10-30T01:10:55 EDT">
+  <suite name="Suite" duration-ms="42004" started-at="2022-11-01T08:52:58 EDT" finished-at="2022-11-01T08:53:40 EDT">
     <groups>
     </groups>
-    <test name="RegressionTest" duration-ms="18414" started-at="2022-10-30T01:10:36 EDT" finished-at="2022-10-30T01:10:55 EDT">
-      <class name="auto.AutoTest">
-        <test-method status="PASS" signature="setUpDriver()[pri:0, instance:auto.AutoTest@1990a65e]" name="setUpDriver" is-config="true" duration-ms="16091" started-at="2022-10-30T01:10:36 EDT" finished-at="2022-10-30T01:10:53 EDT">
+    <test name="Test" duration-ms="42004" started-at="2022-11-01T08:52:58 EDT" finished-at="2022-11-01T08:53:40 EDT">
+      <class name="auto.Test_w_AutoData">
+        <test-method status="PASS" signature="setUpDriver()[pri:0, instance:auto.Test_w_AutoData@1990a65e]" name="setUpDriver" is-config="true" duration-ms="18914" started-at="2022-11-01T08:52:58 EDT" finished-at="2022-11-01T08:53:17 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriver -->
-        <test-method status="PASS" signature="autoQuote()[pri:0, instance:auto.AutoTest@1990a65e]" name="autoQuote" duration-ms="2140" started-at="2022-10-30T01:10:53 EDT" finished-at="2022-10-30T01:10:55 EDT">
+        <test-method status="PASS" signature="autoQuoteWithAutoData()[pri:0, instance:auto.Test_w_AutoData@1990a65e]" name="autoQuoteWithAutoData" duration-ms="23032" started-at="2022-11-01T08:53:17 EDT" finished-at="2022-11-01T08:53:40 EDT">
           <reporter-output>
             <line>
-              <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //p[@class='txt' and text()='Auto ']] <--- has been clicked<br>]]>
+              <![CDATA[[[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //p[@class='txt' and text()='Auto ']] <--- has been clicked<br>]]>
             </line>
             <line>
-              <![CDATA[11368 : has been passed to ---> [[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='zipCode_overlay']]<br>]]>
+              <![CDATA[11368 : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //input[@id='zipCode_overlay']]<br>]]>
             </line>
             <line>
-              <![CDATA[[[ChromeDriver: chrome on MAC (c1b75688b61b98a9b03ff94b9197e58a)] -> xpath: //input[@id='qsButton_overlay']] <--- has been clicked<br>]]>
+              <![CDATA[[[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //input[@id='qsButton_overlay']] <--- has been clicked<br>]]>
+            </line>
+            <line>
+              <![CDATA[Idris : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_FirstName]<br>]]>
+            </line>
+            <line>
+              <![CDATA[Alba : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_LastName]<br>]]>
+            </line>
+            <line>
+              <![CDATA[J : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_MiddleInitial]<br>]]>
+            </line>
+            <line>
+              <![CDATA[02/26/1970 : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_DateOfBirth]<br>]]>
+            </line>
+            <line>
+              <![CDATA[9610 57th Ave : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_MailingAddress]<br>]]>
+            </line>
+            <line>
+              <![CDATA[17F : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_ApartmentUnit]<br>]]>
+            </line>
+            <line>
+              <![CDATA[Corona : has been passed to ---> [[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> id: NameAndAddressEdit_embedded_questions_list_City]<br>]]>
+            </line>
+            <line>
+              <![CDATA[[[ChromeDriver: chrome on MAC (db7b59fb50b28369e999169dc6952c3b)] -> xpath: //button[text()='Okay, start my quote.']] <--- has been clicked<br>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- autoQuote -->
-        <test-method status="PASS" signature="closingDriverSession()[pri:0, instance:auto.AutoTest@1990a65e]" name="closingDriverSession" is-config="true" duration-ms="134" started-at="2022-10-30T01:10:55 EDT" finished-at="2022-10-30T01:10:55 EDT">
+        </test-method> <!-- autoQuoteWithAutoData -->
+        <test-method status="PASS" signature="closingDriverSession()[pri:0, instance:auto.Test_w_AutoData@1990a65e]" name="closingDriverSession" is-config="true" duration-ms="2" started-at="2022-11-01T08:53:40 EDT" finished-at="2022-11-01T08:53:40 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingDriverSession -->
-      </class> <!-- auto.AutoTest -->
-    </test> <!-- RegressionTest -->
-  </suite> <!-- RegressionSuite -->
+      </class> <!-- auto.Test_w_AutoData -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

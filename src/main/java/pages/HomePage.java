@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import static common.CommonActions.*;
 import common.CommonWaits;
+import utils.data.AutoData;
 
 public class HomePage {
 
@@ -25,9 +26,14 @@ public class HomePage {
 	@FindBy(xpath = "//input[@id='qsButton_overlay']")
 	WebElement getQuotElement;
 
-	public void autoSteps() {
+	public void autoSteps(String zipCode) {
 		click(autoProductElement);
-		input(zipCodElement, "11368");
+		input(zipCodElement, zipCode);
+		click(getQuotElement);
+	}
+	public void autoSteps(AutoData autoData) {
+		click(autoProductElement);
+		input(zipCodElement, autoData.getZip());
 		click(getQuotElement);
 	}
 
