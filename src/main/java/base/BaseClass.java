@@ -27,9 +27,11 @@ public class BaseClass {
 	protected PropertyAddressPage propertyAddressPage;
 	protected ConfirmPropertyAddressPage confirnPropertyAddressPage;
 	
-    //@Parameters("browser")
+    //@Parameters("browser") need it for crossBrowser testing
 	@BeforeMethod
 	public void setUpDriver() {
+		//public void setUpDriver(browser){}
+		//initDriver(browser); need it for crossBrowser testing
 		initDriver();
 		driver.manage().window().maximize();
 		driver.get(config.getProperty((URL)));
@@ -38,9 +40,12 @@ public class BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTime));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
 		initClasses();
+		
 	}
 
 	private void initDriver() {
+		//private void initDriver() {}
+		//switch (browser)  need it for crossBrowser testing
 		String browserName = config.getProperty(BROWSER);
 		switch (browserName) {
 		case CHROME:
