@@ -10,8 +10,11 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.AboutYou;
-import pages.HomePage;
+import pages.auto.AboutYou;
+import pages.common.HomePage;
+import pages.homeOwners.ConfirmPropertyAddressPage;
+import pages.homeOwners.HomeOwnerZipCode;
+import pages.homeOwners.PropertyAddressPage;
 import utils.Configuration;
 
 public class BaseClass {
@@ -20,7 +23,11 @@ public class BaseClass {
 	WebDriver driver;
 	protected HomePage homePage;
 	protected AboutYou aboutYou;
-
+	protected HomeOwnerZipCode homeOwnerZipCode;
+	protected PropertyAddressPage propertyAddressPage;
+	protected ConfirmPropertyAddressPage confirnPropertyAddressPage;
+	
+    //@Parameters("browser")
 	@BeforeMethod
 	public void setUpDriver() {
 		initDriver();
@@ -61,6 +68,9 @@ public class BaseClass {
 	private void initClasses() {
 		homePage = new HomePage(driver);
 		aboutYou = new AboutYou(driver);
+		homeOwnerZipCode = new HomeOwnerZipCode(driver);
+		propertyAddressPage = new PropertyAddressPage(driver);
+		confirnPropertyAddressPage = new ConfirmPropertyAddressPage(driver);
 	}
 
 	public WebDriver getDriver() {
@@ -69,7 +79,7 @@ public class BaseClass {
 
 	@AfterMethod
 	public void closingDriverSession() {
-		//getDriver().quit();
+		getDriver().quit();
 	}
 
 }

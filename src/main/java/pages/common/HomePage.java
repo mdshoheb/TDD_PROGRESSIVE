@@ -1,4 +1,4 @@
-package pages;
+package pages.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +21,8 @@ public class HomePage {
 
 	@FindBy(xpath = "//p[@class='txt' and text()='Auto ']")
 	WebElement autoProductElement;
+	@FindBy(xpath = "//a[@data-tracking-label='homeowners_section']")
+	WebElement homeProductElement;
 	@FindBy(xpath = "//input[@id='zipCode_overlay']")
 	WebElement zipCodElement;
 	@FindBy(xpath = "//input[@id='qsButton_overlay']")
@@ -31,6 +33,11 @@ public class HomePage {
 		input(zipCodElement, zipCode);
 		click(getQuotElement);
 	}
+	
+	public void homeSteps() {
+		click(homeProductElement);
+	}
+	
 	public void autoSteps(AutoData autoData) {
 		click(autoProductElement);
 		input(zipCodElement, autoData.getZip());

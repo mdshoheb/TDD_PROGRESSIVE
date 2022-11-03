@@ -4,8 +4,9 @@
 	<test thread-count="5" name="Test">
 		<parameter name="zip" value="11368"></parameter>
 		<parameter name="firstName" value="Andrew"></parameter>
-		<parameter name="lastName" value="Hall"></parameter>
 		<parameter name="middleIn" value="R"></parameter>
+		<parameter name="lastName" value="Hall"></parameter>
+		<parameter name="suffix" value="SR"></parameter>
 		<parameter name="dob" value="05/11/1994"></parameter>
 		<parameter name="mailingAddress" value="9610 57th ave"></parameter>
 		<parameter name="apt" value="17F"></parameter>

@@ -1,4 +1,4 @@
-package pages;
+package pages.auto;
 
 import static common.CommonActions.*;
 import org.openqa.selenium.WebDriver;
@@ -15,10 +15,12 @@ public class AboutYou {
 	
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_FirstName")
 	WebElement firstName;
-	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_LastName")
-	WebElement lastNamElement;
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_MiddleInitial")
 	WebElement middleInitialElement;
+	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_LastName")
+	WebElement lastNamElement;
+	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_Suffix")
+	WebElement suffixElement;
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_DateOfBirth")
 	WebElement dobElement;
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_MailingAddress")
@@ -30,10 +32,11 @@ public class AboutYou {
 	@FindBy(xpath = "//button[text()='Okay, start my quote.']")
 	WebElement okayBtnElement;
 	
-	public void aboutYouSteps(String firstN, String lastName, String middleN, String dob, String mAddress, String apt, String city) {
+	public void aboutYouSteps(String firstN, String middleN, String lastName, String suffix, String dob, String mAddress, String apt, String city) {
 		input(firstName, firstN);
-		input(lastNamElement, lastName);
 		input(middleInitialElement, middleN);
+		input(lastNamElement, lastName);
+		selectDropDown(suffixElement, suffix);
 		input(dobElement, dob);
 		input(mailingAddressElement, mAddress);
 		input(aptNumberElement, apt);
