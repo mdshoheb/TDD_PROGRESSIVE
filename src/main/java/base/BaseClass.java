@@ -27,7 +27,7 @@ public class BaseClass {
 	protected PropertyAddressPage propertyAddressPage;
 	protected ConfirmPropertyAddressPage confirnPropertyAddressPage;
 	
-     //@Parameters("browser") need it for crossBrowser testing
+          //@Parameters("browser") need it for crossBrowser testing
 	@BeforeMethod
 	public void setUpDriver() {
 		//public void setUpDriver(browser){}
