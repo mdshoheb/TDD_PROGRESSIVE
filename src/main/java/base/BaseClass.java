@@ -1,37 +1,59 @@
 package base;
 
 import static utils.IConstant.*;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.Status;
+import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.auto.AboutYou;
 import pages.common.HomePage;
 import pages.homeOwners.ConfirmPropertyAddressPage;
 import pages.homeOwners.HomeOwnerZipCode;
 import pages.homeOwners.PropertyAddressPage;
+import reporting.ExtentManager;
+import reporting.ExtentTestManager;
+import reporting.Logs;
 import utils.Configuration;
 
 public class BaseClass {
 
 	Configuration config = new Configuration();
 	WebDriver driver;
+	ExtentReports extent;
 	protected HomePage homePage;
 	protected AboutYou aboutYou;
 	protected HomeOwnerZipCode homeOwnerZipCode;
 	protected PropertyAddressPage propertyAddressPage;
 	protected ConfirmPropertyAddressPage confirnPropertyAddressPage;
-	
-          //@Parameters("browser") need it for crossBrowser testing
+
+	@BeforeSuite
+	public void initiatinExtentReport() {
+		extent = ExtentManager.getInstance();
+	}
+
+	// @Parameters("browser") need it for crossBrowser testing
 	@BeforeMethod
 	public void setUpDriver() {
-		//public void setUpDriver(browser){}
-		//initDriver(browser); need it for crossBrowser testing
+		// public void setUpDriver(browser){}
+		// initDriver(browser); need it for crossBrowser testing
 		initDriver();
 		driver.manage().window().maximize();
 		driver.get(config.getProperty((URL)));
@@ -40,12 +62,34 @@ public class BaseClass {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTime));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
 		initClasses();
-		
+	}
+
+	@BeforeMethod
+	public void beforeEachTest(Method method) {
+		String className = method.getDeclaringClass().getSimpleName();
+		ExtentTestManager.startTest(method.getName());
+		ExtentTestManager.getTest().assignCategory(className);
+	}
+
+	@AfterMethod
+	public void afterEachTest(ITestResult result) {
+		for (String testName : result.getMethod().getGroups()) {
+			ExtentTestManager.getTest().assignCategory(testName);
+		}
+		if (result.getStatus() == ITestResult.SUCCESS) {
+			ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
+		} else if (result.getStatus() == ITestResult.FAILURE) {
+			ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
+			ExtentTestManager.getTest().log(Status.FAIL, result.getThrowable());
+			ExtentTestManager.getTest().addScreenCaptureFromPath(takeScreenShot(result.getName()));
+		} else {
+			ExtentTestManager.getTest().log(Status.SKIP, "Test Skipped");
+		}
 	}
 
 	private void initDriver() {
-		//private void initDriver() {}
-		//switch (browser)  need it for crossBrowser testing
+		// private void initDriver() {}
+		// switch (browser) need it for crossBrowser testing
 		String browserName = config.getProperty(BROWSER);
 		switch (browserName) {
 		case CHROME:
@@ -85,6 +129,26 @@ public class BaseClass {
 	@AfterMethod
 	public void closingDriverSession() {
 		getDriver().quit();
+	}
+
+	@AfterSuite
+	public void closeReport() {
+		extent.flush();
+	}
+
+	public String takeScreenShot(String testName) {
+		Date date = new Date();
+		SimpleDateFormat format = new SimpleDateFormat("_MMddyyyy_hhmmss");
+		File localFile = new File("test-output/screenShots/" + testName + format.format(date) + ".png");
+		TakesScreenshot ss = (TakesScreenshot) driver;
+		File driverSS = ss.getScreenshotAs(OutputType.FILE);
+		try {
+			Files.copy(driverSS, localFile);
+			Logs.log("Screen Shot captured at \n" + localFile.getAbsolutePath());
+		} catch (IOException e) {
+			Logs.log("Error occurs during taking ScreenShot..!");
+		}
+		return localFile.getAbsolutePath();
 	}
 
 }

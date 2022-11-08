@@ -17,7 +17,7 @@ public class ConfirmPropertyAddressPage {
 	}
 	
 	@FindBy(xpath = "//h2[@id='overlayHeading']")
-	WebElement propertyAddressTitlElement;
+	WebElement propertyAddressTitleElement;
 	@FindBy(id = "addressLine1Modal")
 	WebElement addressLinElement;
 	@FindBy(id = "cityModal")
@@ -26,10 +26,10 @@ public class ConfirmPropertyAddressPage {
 	WebElement continuElement;
 	
 	public void confirmAddressSteps(String expected, String address, String city) {
-		assertGetText(propertyAddressTitlElement, expected);
+		assertGetText(propertyAddressTitleElement, expected);
 		input(addressLinElement, address);
 		waits.waitUntilVisible(cityElement);
-		input(addressLinElement, city);
+		input(cityElement, city);
 		sleep(1);
 		click(continuElement);
 	}
