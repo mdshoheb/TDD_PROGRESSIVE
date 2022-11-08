@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utils.Configuration;
-import utils.IConstant;
+import static utils.IConstant.*;
 
 public class CommonWaits {
 
@@ -16,7 +16,7 @@ public class CommonWaits {
 	Configuration configuration = new Configuration();
 
 	public CommonWaits(WebDriver driver) {
-		long waitTime = Long.parseLong(configuration.getProperty(IConstant.IMPLICIT_WAIT));
+		long waitTime = Long.parseLong(configuration.getProperty(EXPLICIT_WAIT));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(waitTime));
 	}
 
