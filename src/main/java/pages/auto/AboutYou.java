@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 import utils.data.AutoData;
 
 public class AboutYou {
-	
+
 	public AboutYou(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_FirstName")
 	WebElement firstName;
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_MiddleInitial")
@@ -31,8 +31,9 @@ public class AboutYou {
 	WebElement cityElement;
 	@FindBy(xpath = "//button[text()='Okay, start my quote.']")
 	WebElement okayBtnElement;
-	
-	public void aboutYouSteps(String firstN, String middleN, String lastName, String suffix, String dob, String mAddress, String apt, String city) {
+
+	public void aboutYouSteps(String firstN, String middleN, String lastName, String suffix, String dob,
+			String mAddress, String apt, String city) {
 		input(firstName, firstN);
 		input(middleInitialElement, middleN);
 		input(lastNamElement, lastName);
@@ -43,7 +44,8 @@ public class AboutYou {
 		input(cityElement, city);
 		click(okayBtnElement);
 	}
-	public void aboutYouSteps(AutoData autoData) {
+
+	 public void aboutYouSteps(AutoData autoData) {
 		input(firstName, autoData.getFirstName());
 		input(lastNamElement, autoData.getLastName());
 		input(middleInitialElement, autoData.getMiddleIn());

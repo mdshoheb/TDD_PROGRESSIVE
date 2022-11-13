@@ -13,7 +13,6 @@ public class AutoData {
 
 	public AutoData(String zip, String firstName, String lastName, String middleIn, String dob, String mailingAddress,
 			String apt, String city) {
-		super();
 		this.zip = zip;
 		this.firstName = firstName;
 		this.lastName = lastName;

@@ -88,7 +88,7 @@ public class BaseClass {
 	}
 
 	private void initDriver() {
-		// private void initDriver() {}
+		// private void initDriver(String browser) {}
 		// switch (browser) need it for crossBrowser testing
 		String browserName = config.getProperty(BROWSER);
 		switch (browserName) {
@@ -128,7 +128,7 @@ public class BaseClass {
 
 	@AfterMethod
 	public void closingDriverSession() {
-		getDriver().quit();
+		//getDriver().quit();
 	}
 
 	@AfterSuite

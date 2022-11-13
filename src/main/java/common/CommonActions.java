@@ -3,6 +3,7 @@ package common;
 import static org.testng.Assert.*;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,17 @@ public class CommonActions {
 		try {
 			element.click();
 			Logs.log(element + " <--- has been clicked");
+		} catch (NoSuchElementException | NullPointerException e) {
+			e.printStackTrace();
+			Logs.log("ELEMENT NOT FOUND ---> " + element);
+			fail();
+		}
+	}
+
+	public static void clear(WebElement element) {
+		try {
+			element.clear();
+			Logs.log("Clearing element ---> " + element);
 		} catch (NoSuchElementException | NullPointerException e) {
 			e.printStackTrace();
 			Logs.log("ELEMENT NOT FOUND ---> " + element);
@@ -64,17 +76,17 @@ public class CommonActions {
 			return false;
 		}
 	}
-	
+
 	public static void assertGetText(WebElement element, String expected) {
-		if(element != null) {
+		if (element != null) {
 			Logs.log(element + " <--- has text = " + element.getText());
 			assertEquals(element.getText(), expected);
-		}else {
+		} else {
 			Logs.log("ELEMENT NOT FOUND---> " + element);
 			fail();
 		}
 	}
-	
+
 	public static void sleep(int secs) {
 		try {
 			Thread.sleep(secs);
@@ -82,7 +94,7 @@ public class CommonActions {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void selectDropDown(WebElement element, String value) {
 		try {
 			Select select = new Select(element);
@@ -94,4 +106,17 @@ public class CommonActions {
 		}
 	}
 
+	public static void clickByJs(WebDriver driver, WebElement element) {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("srguments[0].click()", element);
+			Logs.log(element + " <--- has been clicked");
+		} catch (NoSuchElementException | NullPointerException e) {
+			e.printStackTrace();
+			Logs.log("ELEMENT NOT FOUND ---> " + element);
+			fail();
+		}
+	}
+	
 }
+

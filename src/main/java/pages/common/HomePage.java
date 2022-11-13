@@ -19,8 +19,10 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//p[@class='txt' and text()='Auto ']")
-	WebElement autoProductElement;
+	@FindBy(xpath = "(//span[text()='Auto'])[1]")
+	WebElement autoProductElement1;
+	@FindBy(xpath = "//p[text()='Auto ']")
+	WebElement autoProductElement2;
 	@FindBy(xpath = "//a[@data-tracking-label='homeowners_section']")
 	WebElement homeProductElement;
 	@FindBy(xpath = "//input[@id='zipCode_overlay']")
@@ -29,17 +31,27 @@ public class HomePage {
 	WebElement getQuotElement;
 
 	public void autoSteps(String zipCode) {
-		click(autoProductElement);
+		if (isPresent(autoProductElement1) && isDisplayed(autoProductElement1)) {
+			click(autoProductElement1);
+		}
+		if (isPresent(autoProductElement2) && isDisplayed(autoProductElement2)) {
+			click(autoProductElement2);
+		}
 		input(zipCodElement, zipCode);
 		click(getQuotElement);
 	}
-	
+
 	public void homeSteps() {
 		click(homeProductElement);
 	}
-	
+
 	public void autoSteps(AutoData autoData) {
-		click(autoProductElement);
+		if (isPresent(autoProductElement1) && isDisplayed(autoProductElement1)) {
+			click(autoProductElement1);
+		}
+		if (isPresent(autoProductElement2) && isDisplayed(autoProductElement2)) {
+			click(autoProductElement2);
+		}
 		input(zipCodElement, autoData.getZip());
 		click(getQuotElement);
 	}

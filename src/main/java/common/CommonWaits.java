@@ -16,7 +16,7 @@ public class CommonWaits {
 	Configuration configuration = new Configuration();
 
 	public CommonWaits(WebDriver driver) {
-		long waitTime = Long.parseLong(configuration.getProperty(EXPLICIT_WAIT));
+		long waitTime = Long.parseLong(configuration.getProperty(EXPLICIT_WAIT ));
 		wait = new WebDriverWait(driver, Duration.ofSeconds(waitTime));
 	}
 
