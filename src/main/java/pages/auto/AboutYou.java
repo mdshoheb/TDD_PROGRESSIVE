@@ -14,7 +14,7 @@ public class AboutYou {
 	}
 
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_FirstName")
-	WebElement firstName;
+	WebElement firstNameElement;
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_MiddleInitial")
 	WebElement middleInitialElement;
 	@FindBy(id = "NameAndAddressEdit_embedded_questions_list_LastName")
@@ -32,9 +32,10 @@ public class AboutYou {
 	@FindBy(xpath = "//button[text()='Okay, start my quote.']")
 	WebElement okayBtnElement;
 
+	
 	public void aboutYouSteps(String firstN, String middleN, String lastName, String suffix, String dob,
 			String mAddress, String apt, String city) {
-		input(firstName, firstN);
+		input(firstNameElement, firstN);
 		input(middleInitialElement, middleN);
 		input(lastNamElement, lastName);
 		selectDropDown(suffixElement, suffix);
@@ -45,8 +46,8 @@ public class AboutYou {
 		click(okayBtnElement);
 	}
 
-	 public void aboutYouSteps(AutoData autoData) {
-		input(firstName, autoData.getFirstName());
+	public void aboutYouSteps(AutoData autoData) {
+		input(firstNameElement, autoData.getFirstName());
 		input(lastNamElement, autoData.getLastName());
 		input(middleInitialElement, autoData.getMiddleIn());
 		input(dobElement, autoData.getDob());

@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<test thread-count="5" name="Test">
+	<parameter name="browser" value="chrome"></parameter>
 		<parameter name="zip" value="11368"></parameter>
 		<parameter name="firstName" value="Andrew"></parameter>
 		<parameter name="middleIn" value="R"></parameter>

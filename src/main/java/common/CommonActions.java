@@ -109,7 +109,7 @@ public class CommonActions {
 	public static void clickByJs(WebDriver driver, WebElement element) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("srguments[0].click()", element);
+			js.executeScript("arguments[0].click()", element);
 			Logs.log(element + " <--- has been clicked");
 		} catch (NoSuchElementException | NullPointerException e) {
 			e.printStackTrace();

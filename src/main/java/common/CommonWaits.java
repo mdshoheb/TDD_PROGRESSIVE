@@ -28,5 +28,14 @@ public class CommonWaits {
 			Assert.fail();
 		}
 	}
+	
+	public void waitUntilClickable(WebElement element) {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (TimeoutException | NullPointerException e) {
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
 
 }
