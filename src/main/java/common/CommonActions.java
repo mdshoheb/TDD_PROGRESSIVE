@@ -117,6 +117,5 @@ public class CommonActions {
 			fail();
 		}
 	}
-	
-}
 
+}
